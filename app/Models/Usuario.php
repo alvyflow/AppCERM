@@ -34,4 +34,12 @@ class Usuario extends Model
     {
         return $this->belongsTo(ComunidadEnergetica::class, 'comunidades_energetica_id');
     }
+
+    /**
+     * Get the consumption records associated with the user.
+     */
+    public function consumos()
+    {
+        return $this->hasMany(Consumo::class);
+    }
 }
